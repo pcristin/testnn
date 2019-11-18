@@ -59,7 +59,7 @@ training_data_file = open("mnist_dataset/mnist_test.csv", "r")
 training_data_list = training_data_file.readlines()
 training_data_file.close()
                 #тренировка нейронной сети
-epochs = 3
+epochs = 2
 
 for e in range(epochs):
     for record in training_data_list:
