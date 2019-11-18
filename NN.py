@@ -1,6 +1,7 @@
 #pylint: disable=no-member
 import numpy as nmp
 from scipy.special import expit
+from termcolor import colored
 
 class neuralNetwork:
     
@@ -86,10 +87,11 @@ for record in test_data_list:
     inputs = (nmp.asfarray(all_values[1:]) / 255 * 0.99) + 0.01
     outputs = n.query(inputs)
     label = nmp.argmax(outputs)
-    print(label, " - ответ сети\n")
     if (label == correct_label):
+        print(label, colored(" - ответ сети\n", "green"))
         scorecard.append(1)
     else:
+        print(label, colored(" - ответ сети\n", "red"))
         scorecard.append(0)
         pass
     pass
